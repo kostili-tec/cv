@@ -1,12 +1,12 @@
 import { Header } from '../components/Header/Header';
-import { MainPage } from '../pages/MainPage/MainPage';
+import AppRouter from '../components/router/AppRouter';
 import './styles/main.scss';
 
 const app = () => {
   return (
     <main className="app">
       <Header />
-      <MainPage />
+      <AppRouter />
     </main>
   );
 };

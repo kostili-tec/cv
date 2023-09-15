@@ -27,6 +27,10 @@
   padding: 17px 31px 17px 32px;
   position: relative;
   cursor: pointer;
+  a {
+    text-decoration: none;
+    color: var(--secondary-gray);
+  }
   &:hover {
     color:var(--secondary-white);
     border-bottom: 3px solid var(--accent-orange);
