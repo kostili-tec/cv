@@ -1,0 +1,99 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 50px;
+  color: var(--secondary-gray);
+  border: 1px solid var(--bg-main-green);
+  border-radius: 0 0 5px 5px;
+}
+
+.findMe {
+  width: 160px;
+  padding-left: 22px;
+  padding-right: 18px;
+}
+
+.ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.li {
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+ 
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px; 
+    background-color: var(--bg-main-green); 
+  }
+  &:first-child {
+    width: 50px;
+    height: 50px;
+  }
+
+  &:first-child::before, &:last-child::before  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--bg-main-green);
+  }
+
+  &:last-child {
+    position: absolute;
+    right: 0;
+    width: 180px;
+    &::after {
+      content: '';
+      width: 0;
+    }
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  color: var(--secondary-gray);
+
+  &:hover {
+    color: var(--secondary-white);
+    svg {
+      fill: var(--secondary-white);
+    }
+  }
+  span {
+    margin-right: 5px;
+  }  
+}
+
+.svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--secondary-gray);
+}
+
+.svgHover {
+  &:hover {
+    fill: var(--secondary-white);
+  }
+}

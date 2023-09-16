@@ -1,3 +1,4 @@
+import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import AppRouter from '../components/router/AppRouter';
 import './styles/main.scss';
@@ -7,6 +8,7 @@ const app = () => {
     <main className="app">
       <Header />
       <AppRouter />
+      <Footer />
     </main>
   );
 };
