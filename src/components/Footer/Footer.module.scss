@@ -73,26 +73,25 @@
   text-decoration: none;
   height: 100%;
   color: var(--secondary-gray);
+  transition: color 0.5s cubic-bezier(0.4, 0.43, 0.39, 1.05);
 
   &:hover {
     color: var(--secondary-white);
-    svg {
-      fill: var(--secondary-white);
-    }
   }
+
   span {
     margin-right: 5px;
-  }  
-}
+  }
 
-.svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--secondary-gray);
-}
+  .svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--secondary-gray);
+    transition: fill 0.5s cubic-bezier(0.4, 0.43, 0.39, 1.05);
+  }
 
-.svgHover {
-  &:hover {
+  &:hover .svg {
     fill: var(--secondary-white);
   }
 }
+
