@@ -22,3 +22,7 @@ body {
   margin: 0 auto;
 }
 
+.active {
+  color: var(--secondary-white);
+  border-bottom: 3px solid var(--accent-orange);
+}

@@ -1,0 +1,46 @@
+.li {
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+ 
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px; 
+    background-color: var(--bg-main-green); 
+  }
+
+  &:first-child::before, &:last-child::before  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--bg-main-green);
+  }
+
+  &:last-child {
+    position: absolute;
+    right: 0;
+  }
+
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: var(--secondary-gray);
+  padding: 17px 31px 17px 32px;
+  &:hover {
+    color: var(--secondary-white);
+  }
+}
+
+.liActive {
+  color:var(--secondary-white);
+  border-bottom: 3px solid var(--accent-orange);
+}

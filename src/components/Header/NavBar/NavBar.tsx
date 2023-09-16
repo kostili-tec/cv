@@ -37,8 +37,8 @@ export const NavBar = () => {
       <p className={classes.name}>danil-porgoniy</p>
       <nav className={classes.nav}>
         <ul className={classes.ul}>
-          {Object.values(NavItems).map(({ className, link, text }) => (
-            <NavBarItem className={className} link={link} text={text} key={text} />
+          {Object.values(NavItems).map(({ link, text }) => (
+            <NavBarItem link={link} text={text} key={text} />
           ))}
         </ul>
       </nav>
