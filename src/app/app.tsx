@@ -5,11 +5,15 @@ import './styles/main.scss';
 
 const app = () => {
   return (
-    <main className="app">
-      <Header />
-      <AppRouter />
-      <Footer />
-    </main>
+    <div className="app">
+      <div className="main-container">
+        <Header />
+        <main className="main">
+          <AppRouter />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 };
 
