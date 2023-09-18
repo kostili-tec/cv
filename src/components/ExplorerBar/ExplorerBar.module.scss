@@ -1,5 +1,49 @@
-.personal { 
+.explorerBar {
+  border: 1px solid var(--bg-main-green);
+  height: 100%;
+}
+
+.explorerBarName { 
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   width: 243px;
   height: 41px;
-  border: 1px solid var(--bg-main-green);
+  border-bottom: 1px solid var(--bg-main-green);
+  padding-left: 14px;
+  span {
+    margin-left: 11px;
+  }
+}
+
+.tgIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 14px;
+  margin: 0;
+  gap: 9px;
+  a {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--secondary-gray);
+    transition: color 0.5s cubic-bezier(0.4, 0.43, 0.39, 1.05);
+    svg {
+      transition: fill 0.5s cubic-bezier(0.4, 0.43, 0.39, 1.05);
+    }
+    &:hover {
+      color: var(--secondary-white);
+    }
+    &:hover svg {
+      fill: var(--secondary-white);
+    }
+  }
 }

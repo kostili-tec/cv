@@ -31,7 +31,7 @@ export const DropdownFolder: FC<DropDownProps> = ({ text, icon, aboutInfoArray }
   };
 
   return (
-    <div>
+    <div className={classes.dropdownMain}>
       <div onClick={handleClickDrowdown} className={classes.dropdown}>
         <RightArrow isRotated={isOpen} />
         {icon}
