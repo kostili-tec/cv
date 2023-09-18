@@ -1,5 +1,11 @@
+import { ExplorerBar } from '../../components/ExplorerBar/ExplorerBar';
+
 const AboutPage = () => {
-  return <div>AboutPage</div>;
+  return (
+    <section>
+      <ExplorerBar />
+    </section>
+  );
 };
 
 export default AboutPage;
