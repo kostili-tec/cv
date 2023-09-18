@@ -8,7 +8,7 @@ type DropdownItemProps = {
 
 export const DropdownFile: FC<DropdownItemProps> = ({ label }) => {
   return (
-    <div className={classes.container}>
+    <div className={classes.dropdownFile}>
       <FileIcon />
       <span>{label}</span>
     </div>

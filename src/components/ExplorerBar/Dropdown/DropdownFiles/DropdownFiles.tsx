@@ -1,18 +1,23 @@
-import { DropdownFile } from '../DropdownFile/DropdownFile';
-import { AboutInfoArray } from '../../../../shared/about';
 import { FC } from 'react';
+import { DropdownFile } from '../DropdownFile/DropdownFile';
+import { AboutInfoArray } from '@/shared/about';
 import classes from './DropdownFiles.module.scss';
+import AnimateHeight, { Height } from 'react-animate-height';
 
 type DropdownFilesProps = {
   aboutInfoArray: AboutInfoArray;
-  isOpened: boolean;
+  height: Height;
 };
 
-export const DropdownFiles: FC<DropdownFilesProps> = ({ aboutInfoArray, isOpened }) => {
+export const DropdownFiles: FC<DropdownFilesProps> = ({ aboutInfoArray, height }) => {
   return (
-    <div className={isOpened ? `${classes.files} ${classes.open}` : `${classes.files}`}>
-      {aboutInfoArray &&
-        aboutInfoArray.map((element) => <DropdownFile key={element.label} label={element.label} />)}
-    </div>
+    <AnimateHeight height={height} duration={150} easing="ease-out">
+      <div className={classes.dropdownFiles}>
+        {aboutInfoArray &&
+          aboutInfoArray.map((element) => (
+            <DropdownFile key={element.label} label={element.label} />
+          ))}
+      </div>
+    </AnimateHeight>
   );
 };

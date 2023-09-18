@@ -2,6 +2,7 @@ import { FC, ReactNode, useState } from 'react';
 import { DropdownFiles } from '../DropdownFiles/DropdownFiles';
 import { RightArrow } from '@/components/Icons/RightArrow/RightArrow';
 import { AboutInfoArray } from '@/shared/about';
+import { Height } from 'react-animate-height';
 import classes from './DropdownFolder.module.scss';
 
 interface DropDownProps {
@@ -10,14 +11,22 @@ interface DropDownProps {
   aboutInfoArray: AboutInfoArray;
 }
 
+enum EnumHeight {
+  ZERO = 0,
+  AUTO = 'auto',
+}
+
 export const DropdownFolder: FC<DropDownProps> = ({ text, icon, aboutInfoArray }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [height, setHeight] = useState<Height>(0);
 
   const handleClickDrowdown = () => {
     if (!isOpen) {
       setIsOpen(true);
+      setHeight(EnumHeight.AUTO);
     } else {
       setIsOpen(false);
+      setHeight(EnumHeight.ZERO);
     }
   };
 
@@ -28,9 +37,7 @@ export const DropdownFolder: FC<DropDownProps> = ({ text, icon, aboutInfoArray }
         {icon}
         <span>{text}</span>
       </div>
-      <div>
-        <DropdownFiles isOpened={isOpen} aboutInfoArray={aboutInfoArray} />
-      </div>
+      <DropdownFiles aboutInfoArray={aboutInfoArray} height={height} />
     </div>
   );
 };
