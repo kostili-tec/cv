@@ -1,0 +1,8 @@
+.close {
+  cursor: pointer;
+  fill: var(--secondary-gray);
+  transition: linear 0.2s;
+  &:hover {
+    fill: var(--secondary-white);
+  }
+}

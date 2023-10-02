@@ -2,5 +2,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: flex-start;
   width: 100%;
+  border-bottom: 1px solid var(--bg-main-green);
 }
