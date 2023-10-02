@@ -12,9 +12,9 @@ export type AboutInfoArray = Array<AboutInfo>;
 
 export const bio: AboutInfoArray = [
   {
-    label: 'personal-info   ',
+    label: 'personal-info',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis est at semper rhoncus. Nulla nec interdum justo. Duis pellentesque elit nec sem dapibus porta. In gravida tempor justo, at feugiat libero facilisis quis. Nullam id viverra nulla, dictum consequat arcu. Integer auctor ligula ac augue efficitur, at consectetur lectus blandit. Curabitur ac metus euismod, mollis libero in, tincidunt felis. Phasellus cursus augue ut metus porttitor, sit amet rhoncus sem aliquet. ',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. \n Integer mattis est at semper rhoncus. Nulla nec interdum justo. \n Duis pellentesque elit nec sem dapibus porta. In gravida tempor justo, at feugiat libero facilisis quis. \n Nullam id viverra nulla, dictum consequat arcu. Integer auctor ligula ac augue efficitur, at consectetur lectus blandit. \n Curabitur ac metus euismod, mollis libero in, tincidunt felis. Phasellus cursus augue ut metus porttitor, sit amet rhoncus sem aliquet. ',
   },
 ];
 

@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import AnimateHeight, { Height } from 'react-animate-height';
+
 import { DropdownFile } from '../DropdownFile/DropdownFile';
 import { AboutInfoArray } from '@/shared/about';
 import classes from './DropdownFiles.module.scss';
-import AnimateHeight, { Height } from 'react-animate-height';
 
 type DropdownFilesProps = {
   aboutInfoArray: AboutInfoArray;
