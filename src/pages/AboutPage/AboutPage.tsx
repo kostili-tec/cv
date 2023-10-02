@@ -1,4 +1,4 @@
-import { ExplorerBar } from '../../components/ExplorerBar/ExplorerBar';
+import { ExplorerBar } from '../../components/IDE/ExplorerBar/ExplorerBar';
 
 const AboutPage = () => {
   return (

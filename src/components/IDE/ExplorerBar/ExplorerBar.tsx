@@ -1,8 +1,6 @@
-import { FolderIcon } from '../Icons/FolderIcon';
 import { DropdownFolder } from './Dropdown/DrowdownFolder/DropdownFolder';
+import { FolderIcon, MailIcon, TelegramIcon } from '@/components/Icons';
 import { education, bio } from '@/shared/about';
-import { MailIcon } from '../Icons/MailIcon';
-import { TelegramIcon } from '../Icons/TelegramIcon';
 import classes from './ExplorerBar.module.scss';
 
 export const ExplorerBar = () => {
