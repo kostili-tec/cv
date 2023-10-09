@@ -30,6 +30,10 @@ class Explorer {
   closeTab(label: string) {
     this.tabs = this.tabs.filter((value) => value !== label);
   }
+
+  get infoLength() {
+    return this.infoArray.length;
+  }
 }
 
 export default new Explorer();

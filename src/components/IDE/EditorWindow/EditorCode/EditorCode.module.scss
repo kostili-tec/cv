@@ -1,0 +1,19 @@
+.code {
+  color: var(--secondary-gray);
+  display: flex;
+  flex-direction: row;
+}
+
+.numbers {
+  margin-left: 38px;
+  margin-right: 40px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraph {
+  margin: 10px 0;
+}
