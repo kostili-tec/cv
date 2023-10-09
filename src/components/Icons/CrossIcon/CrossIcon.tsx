@@ -2,7 +2,7 @@ import { FC } from 'react';
 import classes from './CrossIcon.module.scss';
 
 interface CrossIconProps {
-  handleClick?: () => void;
+  handleClick?: (event: React.MouseEvent) => void;
 }
 
 export const CrossIcon: FC<CrossIconProps> = ({ handleClick }) => {

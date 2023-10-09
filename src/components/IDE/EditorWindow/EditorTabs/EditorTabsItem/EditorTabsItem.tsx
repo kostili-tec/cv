@@ -9,10 +9,17 @@ interface EditorTabsItemProps {
   name: string;
 }
 export const EditorTabsItem: FC<EditorTabsItemProps> = observer(({ name }) => {
+  const handleTabClick = () => {
+    Explorer.findInfo(name);
+  };
+  const handleCrossClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    Explorer.closeTab(name);
+  };
   return (
-    <div className={classes.tabItem}>
+    <div onClick={handleTabClick} className={classes.tabItem}>
       <span>{name}</span>
-      <CrossIcon handleClick={() => Explorer.closeTab(name)} />
+      <CrossIcon handleClick={handleCrossClick} />
     </div>
   );
 });
