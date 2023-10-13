@@ -3,10 +3,15 @@ import { makeAutoObservable } from 'mobx';
 import { education, bio } from '../shared/about';
 import splitString from '../shared/splitString';
 
+interface Tabs {
+  name: string;
+  isActive: boolean;
+}
+
 class Explorer {
   info: string = '';
   infoArray: Array<string> = [];
-  tabs: Array<string> = [];
+  tabs: Array<Tabs> = [];
   totalData = [...education, ...bio];
 
   constructor() {
@@ -17,35 +22,52 @@ class Explorer {
     this.info = data;
   }
 
+  removeActiveFromTabs() {
+    this.tabs.forEach((tab) => (tab.isActive = false));
+  }
+
   findInfo(label: string) {
     const findItem = this.totalData.find((value) => value.label === label);
     if (findItem) {
       this.infoArray = splitString(findItem.content);
-      const checkArray = this.tabs.findIndex((value) => value === findItem.label);
-      if (checkArray === -1) this.tabs.push(findItem.label);
+      const checkArray = this.tabs.findIndex((value) => value.name === findItem.label);
+      this.removeActiveFromTabs();
+      if (checkArray === -1) this.tabs.push({ name: findItem.label, isActive: true });
+      if (checkArray >= 0) this.tabs[checkArray].isActive = true;
     }
   }
 
-  closeTab(label: string) {
-    const findTabIndex = this.tabs.findIndex((tab) => tab === label);
-    if (findTabIndex !== -1) {
-      this.tabs.splice(findTabIndex, 1);
-      if (findTabIndex >= 0) {
-        const checkNextTab = this.tabs[findTabIndex + 1];
-        if (checkNextTab) {
-          const findItem = this.totalData.find((value) => value.label === checkNextTab);
-          if (findItem) this.infoArray = splitString(findItem.content);
-        } else {
-          const prevTabLabel = this.tabs[findTabIndex - 1];
-          const findItem = this.totalData.find((value) => value.label === prevTabLabel);
-          if (findItem) this.infoArray = splitString(findItem.content);
-        }
-        if (this.tabs.length === 0) {
-          this.infoArray = [];
-        }
-      }
+  handleClickTab(label: string) {
+    const findItem = this.totalData.find((value) => value.label === label);
+    const findTabIndex = this.tabs.findIndex(({ name }) => name === label);
+    if (findItem && findTabIndex >= 0) {
+      this.removeActiveFromTabs();
+      this.infoArray = splitString(findItem.content);
+      this.tabs[findTabIndex].isActive = true;
     }
-    this.tabs = this.tabs.filter((value) => value !== label);
+  }
+
+  handleCloseTab(label: string, isActive: boolean) {
+    const findTabIndex = this.tabs.findIndex((tab) => tab.name === label);
+    if (findTabIndex === -1) return;
+
+    if (!isActive) {
+      this.tabs = this.tabs.filter((value) => value.name !== label);
+      return;
+    }
+
+    const tabForSwitch = this.tabs[findTabIndex + 1] || this.tabs[findTabIndex - 1];
+    if (tabForSwitch) {
+      const findItem = this.totalData.find((value) => value.label === tabForSwitch.name);
+      if (findItem) {
+        this.infoArray = splitString(findItem.content);
+        tabForSwitch.isActive = true;
+      }
+    } else {
+      this.infoArray = [];
+    }
+
+    this.tabs = this.tabs.filter((value) => value.name !== label);
   }
 
   get infoLength() {
