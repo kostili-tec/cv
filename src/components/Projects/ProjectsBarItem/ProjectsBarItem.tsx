@@ -1,6 +1,7 @@
 import { ChangeEvent, FC } from 'react';
 
 import classes from './ProjectsBarItem.module.scss';
+import { CustomCheckbox } from '../../Icons';
 
 interface ProjectsBarItemProps {
   label: string;
@@ -9,12 +10,16 @@ interface ProjectsBarItemProps {
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const ProjectsBarItem: FC<ProjectsBarItemProps> = ({ label, icon, checked }) => {
+export const ProjectsBarItem: FC<ProjectsBarItemProps> = ({ label, icon }) => {
   return (
     <div className={classes.item}>
-      <input type="checkbox" checked={checked} />
-      <span>{icon}</span>
-      <label htmlFor="">{label}</label>
+      <label className={classes.label} htmlFor="">
+        <CustomCheckbox />
+        {/* <input className={classes.label} type="checkbox" checked={checked} /> */}
+        {icon}
+        {label}
+      </label>
+      {/* <label htmlFor="">{label}</label> */}
     </div>
   );
 };

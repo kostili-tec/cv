@@ -6,6 +6,7 @@ import { TelegramIcon } from './TelegramIcon';
 import { RightArrow } from './RightArrow/RightArrow';
 import { CrossIcon } from './CrossIcon/CrossIcon';
 import { ReactIcon } from './ProjectsIcons/ReactIcon';
+import { CustomCheckbox } from './CustomCheckbox/CustomCheckbox';
 
 export {
   FileIcon,
@@ -16,4 +17,5 @@ export {
   RightArrow,
   CrossIcon,
   ReactIcon,
+  CustomCheckbox,
 };
