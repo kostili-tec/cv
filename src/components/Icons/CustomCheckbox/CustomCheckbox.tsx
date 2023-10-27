@@ -1,7 +1,21 @@
-export const CustomCheckbox = () => {
+import { FC } from 'react';
+import classes from './CustomCheckbox.module.scss';
+
+interface CustomCheckboxProps {
+  isChecked: boolean;
+  onClick: () => void;
+}
+
+export const CustomCheckbox: FC<CustomCheckboxProps> = ({ onClick, isChecked }) => {
   return (
-    <div>
-      <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <div onClick={onClick} className={classes.div}>
+      <svg
+        width="18"
+        height="18"
+        xmlns="http://www.w3.org/2000/svg"
+        className={classes.svg}
+        fill="none"
+      >
         {/* main bg */}
         <rect
           x="2.5"
@@ -15,6 +29,7 @@ export const CustomCheckbox = () => {
         />
         {/* hover border */}
         <rect
+          className={classes.border}
           x="1"
           y="1.06653"
           width="15.8115"
@@ -35,12 +50,14 @@ export const CustomCheckbox = () => {
           fill="#607B96"
           stroke="#607B96"
           id="svg_3"
+          className={isChecked ? `${classes.active}` : classes.hide}
         />
         {/* check mark */}
         <path
           d="m8.14475,10.18765l5.06262,-4.79474l0.77931,0.7375l-5.84193,5.53222l-3.50503,-3.31925l0.77878,-0.73746l2.72625,2.58173z"
           fill="white"
           id="svg_4"
+          className={isChecked ? `${classes.active}` : classes.hide}
         />
       </svg>
     </div>

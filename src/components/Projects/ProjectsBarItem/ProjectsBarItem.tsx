@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 
 import classes from './ProjectsBarItem.module.scss';
 import { CustomCheckbox } from '../../Icons';
@@ -11,15 +11,18 @@ interface ProjectsBarItemProps {
 }
 
 export const ProjectsBarItem: FC<ProjectsBarItemProps> = ({ label, icon }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleClickCheckbox = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <div className={classes.item}>
       <label className={classes.label} htmlFor="">
-        <CustomCheckbox />
-        {/* <input className={classes.label} type="checkbox" checked={checked} /> */}
+        <CustomCheckbox isChecked={isChecked} onClick={handleClickCheckbox} />
         {icon}
         {label}
       </label>
-      {/* <label htmlFor="">{label}</label> */}
     </div>
   );
 };
