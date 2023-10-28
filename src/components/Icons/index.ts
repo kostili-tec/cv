@@ -7,6 +7,7 @@ import { RightArrow } from './RightArrow/RightArrow';
 import { CrossIcon } from './CrossIcon/CrossIcon';
 import { ReactIcon } from './ProjectsIcons/ReactIcon';
 import { CustomCheckbox } from './CustomCheckbox/CustomCheckbox';
+import { HTMLIcon } from './ProjectsIcons/HTMLIcon';
 
 export {
   FileIcon,
@@ -18,4 +19,5 @@ export {
   CrossIcon,
   ReactIcon,
   CustomCheckbox,
+  HTMLIcon,
 };

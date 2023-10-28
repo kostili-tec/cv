@@ -11,4 +11,14 @@
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  cursor: pointer;
+  &:hover {
+    > svg {
+      fill: #607b967b;
+    }
+  }
+  > svg {
+    margin-left: 24px;
+    margin-right: 10px;
+  }
 }
