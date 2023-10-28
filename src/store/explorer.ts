@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 
 import { education, bio } from '../shared/about';
 import splitString from '../shared/splitString';
+import { CustomCheckboxState } from '../shared/types';
 
 interface Tabs {
   name: string;
@@ -13,6 +14,12 @@ class Explorer {
   infoArray: Array<string> = [];
   tabs: Array<Tabs> = [];
   totalData = [...education, ...bio];
+  checkBoxes: CustomCheckboxState = {
+    HTML: false,
+    JS: false,
+    React: false,
+    TS: false,
+  };
 
   constructor() {
     makeAutoObservable(this);
@@ -68,6 +75,10 @@ class Explorer {
     }
 
     this.tabs = this.tabs.filter((value) => value.name !== label);
+  }
+
+  setCheckbox(checkboxName: keyof CustomCheckboxState) {
+    this.checkBoxes[checkboxName] = !this.checkBoxes[checkboxName];
   }
 
   get infoLength() {

@@ -1,14 +1,18 @@
 import { FC } from 'react';
+import { observer } from 'mobx-react-lite';
+
+import { CustomCheckboxState } from '../../../shared/types';
+import Explorer from '@/store/explorer';
 import classes from './CustomCheckbox.module.scss';
 
 interface CustomCheckboxProps {
-  isChecked: boolean;
-  onClick: () => void;
+  checkboxName: keyof CustomCheckboxState;
 }
 
-export const CustomCheckbox: FC<CustomCheckboxProps> = ({ onClick, isChecked }) => {
+export const CustomCheckbox: FC<CustomCheckboxProps> = observer(({ checkboxName }) => {
+  const checked = Explorer.checkBoxes[checkboxName];
   return (
-    <div onClick={onClick} className={classes.div}>
+    <div onClick={() => Explorer.setCheckbox(checkboxName)} className={classes.div}>
       <svg
         width="18"
         height="18"
@@ -50,16 +54,16 @@ export const CustomCheckbox: FC<CustomCheckboxProps> = ({ onClick, isChecked }) 
           fill="#607B96"
           stroke="#607B96"
           id="svg_3"
-          className={isChecked ? `${classes.active}` : classes.hide}
+          className={checked ? `${classes.active}` : classes.hide}
         />
         {/* check mark */}
         <path
           d="m8.14475,10.18765l5.06262,-4.79474l0.77931,0.7375l-5.84193,5.53222l-3.50503,-3.31925l0.77878,-0.73746l2.72625,2.58173z"
           fill="white"
           id="svg_4"
-          className={isChecked ? `${classes.active}` : classes.hide}
+          className={checked ? `${classes.active}` : classes.hide}
         />
       </svg>
     </div>
   );
-};
+});
