@@ -11,10 +11,16 @@
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  color: var(--secondary-gray);
+  transition: ease-in 0.2s;
   cursor: pointer;
   &:hover {
+    color: var(--secondary-white);
     > svg {
-      fill: #607b967b;
+      fill: #607b96;
+    }
+    > .border {
+      opacity: 1;
     }
   }
   > svg {

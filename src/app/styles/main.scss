@@ -35,3 +35,14 @@ body {
   color: var(--secondary-white);
   border-bottom: 3px solid var(--accent-orange);
 }
+
+.svg-icon {
+  transition: ease-in 0.2s;
+}
+.svg-icon_unchecked {
+  fill: #607b967b;  
+}
+
+.svg-icon_checked {
+  fill: var(--secondary-gray);
+}

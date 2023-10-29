@@ -13,7 +13,7 @@ export const ProjectsBarItems = observer(() => {
   return (
     <div className={classes.projectBarItems}>
       <ProjectsBarItem
-        icon={<ReactIcon checked={false} />}
+        icon={<ReactIcon checked={Explorer.checkBoxes.React} />}
         checkboxName="React"
         handleClick={handleClick}
       />
