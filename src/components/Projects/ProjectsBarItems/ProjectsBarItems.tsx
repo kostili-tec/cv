@@ -16,8 +16,14 @@ export const ProjectsBarItems = observer(() => {
         icon={<ReactIcon checked={Explorer.checkBoxes.React} />}
         checkboxName="React"
         handleClick={handleClick}
+        checked={Explorer.checkBoxes.React}
       />
-      <ProjectsBarItem icon={<HTMLIcon />} checkboxName="HTML" handleClick={handleClick} />
+      <ProjectsBarItem
+        icon={<HTMLIcon checked={Explorer.checkBoxes.HTML} />}
+        checkboxName="HTML"
+        handleClick={handleClick}
+        checked={Explorer.checkBoxes.HTML}
+      />
     </div>
   );
 });
