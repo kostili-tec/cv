@@ -7,6 +7,7 @@ export interface CustomCheckboxState {
   TS: boolean;
   JS: boolean;
   HTML: boolean;
+  CSS: boolean;
 }
 
 export enum IconColors {

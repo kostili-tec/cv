@@ -10,6 +10,7 @@ import { CustomCheckbox } from './CustomCheckbox/CustomCheckbox';
 import { HTMLIcon } from './ProjectsIcons/HTMLIcon';
 import { JSIcon } from './ProjectsIcons/JSIcon';
 import { TSIcon } from './ProjectsIcons/TSIcon';
+import { CSSIcon } from './ProjectsIcons/CSSIcon';
 
 export {
   FileIcon,
@@ -24,4 +25,5 @@ export {
   HTMLIcon,
   JSIcon,
   TSIcon,
+  CSSIcon,
 };

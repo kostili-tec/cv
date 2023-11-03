@@ -19,6 +19,7 @@ class Explorer {
     JS: false,
     React: false,
     TS: false,
+    CSS: false,
   };
 
   constructor() {
