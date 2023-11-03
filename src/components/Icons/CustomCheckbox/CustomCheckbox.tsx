@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 
-import Explorer from '@/store/explorer';
+import ProjectsStore from '@/store/projectsStore';
 import { CustomCheckboxState } from '../../../shared/types';
 import classes from './CustomCheckbox.module.scss';
 
@@ -10,7 +10,7 @@ interface CustomCheckboxProps {
 }
 
 export const CustomCheckbox: FC<CustomCheckboxProps> = observer(({ checkboxName }) => {
-  const checked = Explorer.checkBoxes[checkboxName];
+  const checked = ProjectsStore.checkBoxes[checkboxName];
   return (
     <div className={classes.div}>
       <svg

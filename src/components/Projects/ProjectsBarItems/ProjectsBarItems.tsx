@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 
-import Explorer from '@/store/explorer';
+import ProjectsStore from '@/store/projectsStore';
 import { ReactIcon, HTMLIcon, JSIcon, CSSIcon } from '../../Icons';
 import { ProjectsBarItem } from '../ProjectsBarItem/ProjectsBarItem';
 import { CustomCheckboxState } from '../../../shared/types';
@@ -8,33 +8,33 @@ import classes from './ProjectsBarItems.module.scss';
 
 export const ProjectsBarItems = observer(() => {
   const handleClick = (checkboxName: keyof CustomCheckboxState) => {
-    Explorer.setCheckbox(checkboxName);
+    ProjectsStore.setCheckbox(checkboxName);
   };
   return (
     <div className={classes.projectBarItems}>
       <ProjectsBarItem
-        icon={<ReactIcon checked={Explorer.checkBoxes.React} />}
+        icon={<ReactIcon checked={ProjectsStore.checkBoxes.React} />}
         checkboxName="React"
         handleClick={handleClick}
-        checked={Explorer.checkBoxes.React}
+        checked={ProjectsStore.checkBoxes.React}
       />
       <ProjectsBarItem
-        icon={<JSIcon checked={Explorer.checkBoxes.JS} />}
+        icon={<JSIcon checked={ProjectsStore.checkBoxes.JS} />}
         checkboxName="JS"
         handleClick={handleClick}
-        checked={Explorer.checkBoxes.JS}
+        checked={ProjectsStore.checkBoxes.JS}
       />
       <ProjectsBarItem
-        icon={<HTMLIcon checked={Explorer.checkBoxes.HTML} />}
+        icon={<HTMLIcon checked={ProjectsStore.checkBoxes.HTML} />}
         checkboxName="HTML"
         handleClick={handleClick}
-        checked={Explorer.checkBoxes.HTML}
+        checked={ProjectsStore.checkBoxes.HTML}
       />
       <ProjectsBarItem
-        icon={<CSSIcon checked={Explorer.checkBoxes.CSS} />}
+        icon={<CSSIcon checked={ProjectsStore.checkBoxes.CSS} />}
         checkboxName="CSS"
         handleClick={handleClick}
-        checked={Explorer.checkBoxes.CSS}
+        checked={ProjectsStore.checkBoxes.CSS}
       />
     </div>
   );
