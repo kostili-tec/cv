@@ -8,6 +8,8 @@ import { CrossIcon } from './CrossIcon/CrossIcon';
 import { ReactIcon } from './ProjectsIcons/ReactIcon';
 import { CustomCheckbox } from './CustomCheckbox/CustomCheckbox';
 import { HTMLIcon } from './ProjectsIcons/HTMLIcon';
+import { JSIcon } from './ProjectsIcons/JSIcon';
+import { TSIcon } from './ProjectsIcons/TSIcon';
 
 export {
   FileIcon,
@@ -20,4 +22,6 @@ export {
   ReactIcon,
   CustomCheckbox,
   HTMLIcon,
+  JSIcon,
+  TSIcon,
 };

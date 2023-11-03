@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 
 import Explorer from '@/store/explorer';
-import { ReactIcon, HTMLIcon } from '../../Icons';
+import { ReactIcon, HTMLIcon, JSIcon } from '../../Icons';
 import { ProjectsBarItem } from '../ProjectsBarItem/ProjectsBarItem';
 import { CustomCheckboxState } from '../../../shared/types';
 import classes from './ProjectsBarItems.module.scss';
@@ -17,6 +17,12 @@ export const ProjectsBarItems = observer(() => {
         checkboxName="React"
         handleClick={handleClick}
         checked={Explorer.checkBoxes.React}
+      />
+      <ProjectsBarItem
+        icon={<JSIcon checked={Explorer.checkBoxes.JS} />}
+        checkboxName="JS"
+        handleClick={handleClick}
+        checked={Explorer.checkBoxes.JS}
       />
       <ProjectsBarItem
         icon={<HTMLIcon checked={Explorer.checkBoxes.HTML} />}
